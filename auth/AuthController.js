@@ -21,7 +21,7 @@ class AuthController {
         httpOnly: true,
       });
       {
-        res.status(400).json({ message: "User logged in" });
+        res.status(200).json({ message: "User logged in" });
       }
     }
     if (!User) {
@@ -31,7 +31,7 @@ class AuthController {
         points: 0
       };
       await collection.insertOne(newUser);
-      res.status(200).json({ message: `${username} created successfully` });
+      res.status(201).json({ message: `${username} created successfully` });
     }
   }
 }
